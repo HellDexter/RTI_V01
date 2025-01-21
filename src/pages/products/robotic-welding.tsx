@@ -286,10 +286,10 @@ export default function RoboticWelding() {
                       className="relative aspect-[4/3] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => setSelectedImage("/images/Modelová řada H/H-rám_1.jpg")}
+                      onClick={() => setSelectedImage("/images/modelova-rada-h/h-ram-1.jpg")}
                     >
                       <Image
-                        src="/images/Modelová řada H/H-rám_1.jpg"
+                        src="/images/modelova-rada-h/h-ram-1.jpg"
                         alt="H-rám pohled 1"
                         fill
                         className="object-contain"
@@ -329,10 +329,10 @@ export default function RoboticWelding() {
                       className="relative aspect-[4/3] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300 lg:order-1"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => setSelectedImage("/images/Modelová řada H/H-rám_2.JPG")}
+                      onClick={() => setSelectedImage("/images/modelova-rada-h/h-ram-2.jpg")}
                     >
                       <Image
-                        src="/images/Modelová řada H/H-rám_2.JPG"
+                        src="/images/modelova-rada-h/h-ram-2.jpg"
                         alt="H-rám pohled 2"
                         fill
                         className="object-contain"
@@ -400,10 +400,10 @@ export default function RoboticWelding() {
                   className="relative aspect-[16/9] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
-                  onClick={() => setSelectedImage("/images/Modelová řada H/2023_21_HS1_H rám.jpg")}
+                  onClick={() => setSelectedImage("/images/modelova-rada-h/2023_21_HS1_H-ram.jpg")}
                 >
                   <Image
-                    src="/images/Modelová řada H/2023_21_HS1_H rám.jpg"
+                    src="/images/modelova-rada-h/2023_21_HS1_H-ram.jpg"
                     alt="H-rám hlavní pohled"
                     fill
                     className="object-contain"
@@ -441,10 +441,10 @@ export default function RoboticWelding() {
                       className="relative aspect-[4/3] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => setSelectedImage("/images/Modelová řada E/E-rám_1.jpg")}
+                      onClick={() => setSelectedImage("/images/modelova-rada-e/e-ram-1.jpg")}
                     >
                       <Image
-                        src="/images/Modelová řada E/E-rám_1.jpg"
+                        src="/images/modelova-rada-e/e-ram-1.jpg"
                         alt="E-rám pohled 1"
                         fill
                         className="object-contain"
@@ -484,10 +484,10 @@ export default function RoboticWelding() {
                       className="relative aspect-[4/3] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300 lg:order-1"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => setSelectedImage("/images/Modelová řada E/E-rám_2.jpg")}
+                      onClick={() => setSelectedImage("/images/modelova-rada-e/e-ram-2.jpg")}
                     >
                       <Image
-                        src="/images/Modelová řada E/E-rám_2.jpg"
+                        src="/images/modelova-rada-e/e-ram-2.jpg"
                         alt="E-rám pohled 2"
                         fill
                         className="object-contain"
@@ -555,10 +555,10 @@ export default function RoboticWelding() {
                   className="relative aspect-[16/9] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
-                  onClick={() => setSelectedImage("/images/Modelová řada E/2023_10b_HS_E_ram.jpg")}
+                  onClick={() => setSelectedImage("/images/modelova-rada-e/2023_10b_HS_E-ram.jpg")}
                 >
                   <Image
-                    src="/images/Modelová řada E/2023_10b_HS_E_ram.jpg"
+                    src="/images/modelova-rada-e/2023_10b_HS_E-ram.jpg"
                     alt="E-rám hlavní pohled"
                     fill
                     className="object-contain"
@@ -596,10 +596,10 @@ export default function RoboticWelding() {
                       className="relative aspect-[4/3] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => setSelectedImage("/images/Modelová řada T/Stůl-1.jpg")}
+                      onClick={() => setSelectedImage("/images/modelova-rada-t/stul-1.jpg")}
                     >
                       <Image
-                        src="/images/Modelová řada T/Stůl-1.jpg"
+                        src="/images/modelova-rada-t/stul-1.jpg"
                         alt="Stůl pohled 1"
                         fill
                         className="object-contain"
@@ -686,10 +686,10 @@ export default function RoboticWelding() {
                     className="relative aspect-[16/9] cursor-zoom-in rounded-xl overflow-hidden border-2 border-[#0aef0b] hover:border-4 transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
-                    onClick={() => setSelectedImage("/images/Modelová řada T/2023_XX_HS_Stůl-2.jpg")}
+                    onClick={() => setSelectedImage("/images/modelova-rada-t/2023_XX_HS_Stul-2.jpg")}
                   >
                     <Image
-                      src="/images/Modelová řada T/2023_XX_HS_Stůl-2.jpg"
+                      src="/images/modelova-rada-t/2023_XX_HS_Stul-2.jpg"
                       alt="Stůl hlavní pohled"
                       fill
                       className="object-contain"
