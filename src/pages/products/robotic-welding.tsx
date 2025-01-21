@@ -294,7 +294,9 @@ export default function RoboticWelding() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        priority
+                        quality={75}
+                        loading="lazy"
+                        priority={false}
                       />
                     </motion.div>
                     
@@ -337,6 +339,9 @@ export default function RoboticWelding() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        quality={75}
+                        loading="lazy"
+                        priority={false}
                       />
                     </motion.div>
                   </div>
@@ -408,6 +413,9 @@ export default function RoboticWelding() {
                     fill
                     className="object-contain"
                     sizes="100vw"
+                    quality={75}
+                    loading="lazy"
+                    priority={false}
                   />
                 </motion.div>
               </div>
@@ -449,7 +457,9 @@ export default function RoboticWelding() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        priority
+                        quality={75}
+                        loading="lazy"
+                        priority={false}
                       />
                     </motion.div>
                     
@@ -492,6 +502,9 @@ export default function RoboticWelding() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        quality={75}
+                        loading="lazy"
+                        priority={false}
                       />
                     </motion.div>
                   </div>
@@ -563,6 +576,9 @@ export default function RoboticWelding() {
                     fill
                     className="object-contain"
                     sizes="100vw"
+                    quality={75}
+                    loading="lazy"
+                    priority={false}
                   />
                 </motion.div>
               </div>
@@ -604,7 +620,9 @@ export default function RoboticWelding() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        priority
+                        quality={75}
+                        loading="lazy"
+                        priority={false}
                       />
                     </motion.div>
                     
@@ -694,6 +712,9 @@ export default function RoboticWelding() {
                       fill
                       className="object-contain"
                       sizes="100vw"
+                      quality={75}
+                      loading="lazy"
+                      priority={false}
                     />
                   </motion.div>
                 </div>
@@ -716,6 +737,9 @@ export default function RoboticWelding() {
               fill
               className="object-contain"
               sizes="100vw"
+              quality={75}
+              loading="lazy"
+              priority={false}
             />
             <button
               onClick={() => setSelectedImage(null)}

@@ -5,7 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   i18n,
   images: {
-    unoptimized: true,
+    domains: ['vercel.app'],
+    formats: ['image/webp'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
