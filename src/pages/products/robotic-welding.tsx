@@ -90,7 +90,7 @@ export default function RoboticWelding() {
               transition={{ duration: 0.5 }}
               className="mb-24"
             >
-              <h2 className="text-4xl font-bold text-center mb-12 hover:text-[#0aef0b] transition-colors duration-300">Dostupné technologie svařování</h2>
+              <h2 className="text-4xl font-bold text-center mb-12">Dostupné technologie svařování</h2>
               <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {technologies.map((tech) => (
@@ -154,7 +154,7 @@ export default function RoboticWelding() {
               transition={{ duration: 0.5 }}
               className="mb-24"
             >
-              <h2 className="text-4xl font-bold text-center mb-12 hover:text-[#0aef0b] transition-colors duration-300">Technické parametry svařovacích technologií</h2>
+              <h2 className="text-4xl font-bold text-center mb-12">Technické parametry svařovacích technologií</h2>
               <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* MIG/MAG */}
@@ -206,7 +206,7 @@ export default function RoboticWelding() {
               transition={{ duration: 0.5 }}
               className="text-center mb-24"
             >
-              <h2 className="text-4xl font-bold mb-6 hover:text-[#0aef0b] transition-colors duration-300">Modelové řady</h2>
+              <h2 className="text-4xl font-bold mb-6">Modelové řady</h2>
               <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Nabízíme tři specializované modelové řady svařovacích pracovišť, každá navržená pro specifické potřeby výroby
@@ -224,7 +224,7 @@ export default function RoboticWelding() {
                   transition={{ duration: 0.2 }}
                 >
                   <span className="absolute -top-6 left-4 text-6xl font-bold text-[#0aef0b]/20 group-hover:text-[#0aef0b]/30 transition-colors duration-300">H</span>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-[#0aef0b] transition-colors duration-300">Modelová řada H</h3>
+                  <h3 className="text-2xl font-bold mb-4">Modelová řada H</h3>
                   <p className="text-gray-600">Robotické svařovací pracoviště na ocelové konstrukci ve tvaru písmene H</p>
                 </motion.button>
 
@@ -238,7 +238,7 @@ export default function RoboticWelding() {
                   transition={{ duration: 0.2 }}
                 >
                   <span className="absolute -top-6 left-4 text-6xl font-bold text-[#0aef0b]/20 group-hover:text-[#0aef0b]/30 transition-colors duration-300">E</span>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-[#0aef0b] transition-colors duration-300">Modelová řada E</h3>
+                  <h3 className="text-2xl font-bold mb-4">Modelová řada E</h3>
                   <p className="text-gray-600">Robotické svařovací pracoviště na ocelové konstrukci ve tvaru písmene E</p>
                 </motion.button>
 
@@ -252,7 +252,7 @@ export default function RoboticWelding() {
                   transition={{ duration: 0.2 }}
                 >
                   <span className="absolute -top-6 left-4 text-6xl font-bold text-[#0aef0b]/20 group-hover:text-[#0aef0b]/30 transition-colors duration-300">T</span>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-[#0aef0b] transition-colors duration-300">Modelová řada T</h3>
+                  <h3 className="text-2xl font-bold mb-4">Modelová řada T</h3>
                   <p className="text-gray-600">Robotické svařovací pracoviště na ocelovém svařovacím stole</p>
                 </motion.button>
               </div>
@@ -273,7 +273,7 @@ export default function RoboticWelding() {
                 <div id="modelova-rada-h" className="space-y-16">
                   <div className="mb-12">
                     <div className="text-center">
-                      <h2 className="text-3xl font-bold mb-4 hover:text-[#0aef0b] transition-colors duration-300">
+                      <h2 className="text-3xl font-bold mb-4">
                         Modelová řada H
                       </h2>
                       <div className="w-24 h-1 bg-[#0aef0b] mx-auto"></div>
@@ -349,7 +349,7 @@ export default function RoboticWelding() {
 
                 {/* Technické parametry */}
                 <div className="bg-gradient-to-br from-[#0aef0b]/5 to-transparent p-12 rounded-2xl border border-[#0aef0b]/20">
-                  <h3 className="text-3xl font-bold text-center mb-12 hover:text-[#0aef0b] transition-colors duration-300">Technické parametry řady H</h3>
+                  <h3 className="text-3xl font-bold text-center mb-12">Technické parametry řady H</h3>
                   <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mx-auto">
                     <div className="space-y-6">
@@ -436,7 +436,7 @@ export default function RoboticWelding() {
                 <div id="modelova-rada-e" className="space-y-16">
                   <div className="mb-12">
                     <div className="text-center">
-                      <h2 className="text-3xl font-bold mb-4 hover:text-[#0aef0b] transition-colors duration-300">
+                      <h2 className="text-3xl font-bold mb-4">
                         Modelová řada E
                       </h2>
                       <div className="w-24 h-1 bg-[#0aef0b] mx-auto"></div>
@@ -512,7 +512,7 @@ export default function RoboticWelding() {
 
                 {/* Technické parametry */}
                 <div className="bg-gradient-to-br from-[#0aef0b]/5 to-transparent p-12 rounded-2xl border border-[#0aef0b]/20">
-                  <h3 className="text-3xl font-bold text-center mb-12 hover:text-[#0aef0b] transition-colors duration-300">Technické parametry řady E</h3>
+                  <h3 className="text-3xl font-bold text-center mb-12">Technické parametry řady E</h3>
                   <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mx-auto">
                     <div className="space-y-6">
@@ -599,7 +599,7 @@ export default function RoboticWelding() {
                 <div id="modelova-rada-t" className="space-y-16">
                   <div className="mb-12">
                     <div className="text-center">
-                      <h2 className="text-3xl font-bold mb-4 hover:text-[#0aef0b] transition-colors duration-300">
+                      <h2 className="text-3xl font-bold mb-4">
                         Modelová řada T
                       </h2>
                       <div className="w-24 h-1 bg-[#0aef0b] mx-auto"></div>
@@ -648,7 +648,7 @@ export default function RoboticWelding() {
 
                   {/* Technické parametry */}
                   <div className="bg-gradient-to-br from-[#0aef0b]/5 to-transparent p-12 rounded-2xl border border-[#0aef0b]/20 mb-12">
-                    <h3 className="text-3xl font-bold text-center mb-12 hover:text-[#0aef0b] transition-colors duration-300">Technické parametry řady T</h3>
+                    <h3 className="text-3xl font-bold text-center mb-12">Technické parametry řady T</h3>
                     <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mx-auto">
                       <div className="space-y-6">
