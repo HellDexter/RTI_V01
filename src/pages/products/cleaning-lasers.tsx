@@ -108,19 +108,9 @@ export default function CleaningLasers() {
                 transition={{ duration: 0.7 }}
                 className="p-8 rounded-2xl bg-gradient-to-r from-[#0aef0b]/5 to-transparent border-l-4 border-[#0aef0b] hover:from-[#0aef0b]/10 transition-all duration-300"
               >
-                <div className="text-gray-700">
-                  <p className="mb-4">
-                    Laserové čištění je moderní a ekologická metoda čištění povrchů, která využívá přesně kontrolovaný laserový paprsek k odstranění nečistot, oxidů, barev a dalších povrchových vrstev bez poškození základního materiálu.
-                  </p>
-
-                  <p className="mb-4">
-                    Technologie je založena na principu ablace, kdy laserový paprsek odpařuje nežádoucí materiál z povrchu. Proces je velmi přesný, šetrný k životnímu prostředí a nevyžaduje použití chemikálií ani abrazivních materiálů.
-                  </p>
-
-                  <p className="mb-4">
-                    Při integraci na robotu je možné dosahovat čištění, které zanechává sjednocený povrch díky konstantní rychlosti a vzdálenosti laseru od povrchu.
-                  </p>
-                </div>
+                <p className="text-lg text-gray-800 leading-relaxed m-0">
+                  Laserové čištění je moderní a ekologická metoda čištění povrchů, která využívá přesně kontrolovaný laserový paprsek k odstranění nečistot, oxidů, barev a dalších povrchových vrstev bez poškození základního materiálu.
+                </p>
               </motion.div>
 
               <motion.div
@@ -130,7 +120,7 @@ export default function CleaningLasers() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="p-8 rounded-2xl bg-gradient-to-l from-[#0aef0b]/5 to-transparent border-r-4 border-[#0aef0b] hover:from-[#0aef0b]/10 transition-all duration-300"
               >
-                <p className="text-xl text-gray-800 leading-relaxed m-0">
+                <p className="text-lg text-gray-800 leading-relaxed m-0">
                   Technologie je založena na principu ablace, kdy laserový paprsek odpařuje nežádoucí materiál z povrchu. Proces je velmi přesný, šetrný k životnímu prostředí a nevyžaduje použití chemikálií ani abrazivních materiálů.
                 </p>
               </motion.div>
@@ -142,7 +132,7 @@ export default function CleaningLasers() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="p-8 rounded-2xl bg-gradient-to-r from-[#0aef0b]/5 to-transparent border-l-4 border-[#0aef0b] hover:from-[#0aef0b]/10 transition-all duration-300"
               >
-                <p className="text-xl text-gray-800 leading-relaxed m-0">
+                <p className="text-lg text-gray-800 leading-relaxed m-0">
                   Při integraci na robotu je možné dosahovat čištění, které zanechává sjednocený povrch díky konstantní rychlosti a vzdálenosti laseru od povrchu.
                 </p>
               </motion.div>
