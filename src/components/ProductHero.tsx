@@ -37,7 +37,7 @@ const ProductHero = ({ title, description, imagePath }: ProductHeroProps) => {
   };
 
   return (
-    <div className="relative w-full" style={{ height: 'min(80vh, calc(100vw / 2.2))' }}>
+    <div className="relative w-full" style={{ height: 'min(90vh, calc(100vw / 2.2))' }}>
       <Image
         src={imagePath}
         alt={title}
@@ -47,12 +47,12 @@ const ProductHero = ({ title, description, imagePath }: ProductHeroProps) => {
         priority
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 bg-black/50">
-        <div className="container mx-auto text-center group">
+        <div className="container mx-auto text-center group mt-16 sm:mt-0">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold mb-8 text-white hover:text-[#00ff00] transition-colors duration-300"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-8 text-white transition-colors duration-300"
           >
             {title.split('').map((char, index) => (
               <motion.span
@@ -65,7 +65,7 @@ const ProductHero = ({ title, description, imagePath }: ProductHeroProps) => {
             ))}
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-3xl text-white max-w-4xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-3xl text-white max-w-4xl mx-auto px-4"
             variants={textVariants}
             initial="hidden"
             animate="visible"

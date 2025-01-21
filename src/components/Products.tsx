@@ -93,7 +93,7 @@ const ProductCard = ({ product, index }) => {
       className="h-full bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer group transform transition-all duration-500 hover:shadow-2xl hover:translate-y-[-8px] hover:border-[#0aef0b] hover:border-2"
     >
       <Link href={product.href} className="flex flex-col h-full">
-        <div className="relative h-72 overflow-hidden">
+        <div className="relative h-48 sm:h-72 overflow-hidden">
           <Image
             src={product.image}
             alt={product.title}
@@ -103,25 +103,19 @@ const ProductCard = ({ product, index }) => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/60 opacity-50 group-hover:opacity-70 transition-all duration-500" />
           <div className="absolute inset-0 bg-[#0aef0b]/0 mix-blend-overlay group-hover:bg-[#0aef0b]/10 transition-all duration-500" />
         </div>
-        <div className="p-8 flex-grow flex flex-col bg-gradient-to-b from-white to-gray-50">
-          <h3 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-[#0aef0b] transition-all duration-300">
+        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+          <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-[#0aef0b] transition-colors duration-300">
             {product.title}
           </h3>
-          <p className="text-gray-600 mb-6 flex-grow group-hover:text-gray-700 transition-all duration-300">
+          <p className="text-sm sm:text-base text-gray-600 mb-4 flex-grow">
             {product.description}
           </p>
-          <ul className="space-y-3 mb-8">
-            {product.features.map((feature, index) => (
-              <motion.li
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-                className="flex items-center text-sm text-gray-500 group-hover:text-gray-600 transition-all duration-300"
-              >
-                <span className="w-2 h-2 bg-[#0aef0b] rounded-full mr-3 group-hover:scale-125 transition-all duration-300" />
+          <ul className="space-y-2 mb-4">
+            {product.features.map((feature, i) => (
+              <li key={i} className="text-xs sm:text-sm text-gray-500 flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0aef0b] rounded-full mr-2 flex-shrink-0"></span>
                 {feature}
-              </motion.li>
+              </li>
             ))}
           </ul>
           <button className="w-full bg-[#0aef0b] text-white font-semibold py-4 px-6 rounded-lg transition-all duration-500 hover:shadow-lg hover:shadow-[#0aef0b]/20 group-hover:bg-[#09d60a]">
