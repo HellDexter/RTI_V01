@@ -37,46 +37,38 @@ const ProductHero = ({ title, description, imagePath }: ProductHeroProps) => {
   };
 
   return (
-    <div className="relative w-full" style={{ height: 'min(90vh, calc(100vw / 2.2))' }}>
+    <section className="relative w-full" style={{ height: 'min(70vh, calc(100vw / 2.2))' }}>
       <Image
         src={imagePath}
         alt={title}
         fill
         className="object-cover"
-        quality={100}
         priority
+        quality={100}
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 bg-black/50">
-        <div className="container mx-auto text-center group mt-16 sm:mt-0">
-          <motion.h1 
+      <div className="absolute inset-0 bg-black/30" />
+      
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
+        <div className="mt-20 sm:mt-0 w-full">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-8 text-white transition-colors duration-300"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white tracking-wide max-w-5xl mx-auto hero-text-hover [text-shadow: 2px_2px_0_rgb(0,0,0)] break-words sm:whitespace-nowrap px-2 sm:px-0"
           >
-            {title.split('').map((char, index) => (
-              <motion.span
-                key={index}
-                className="inline-block transition-colors duration-300 group-hover:text-[#00ff00]"
-                variants={letterVariants}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-            ))}
+            {title}
           </motion.h1>
-          <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-3xl text-white max-w-4xl mx-auto px-4"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 tracking-wider max-w-4xl mx-auto hero-text-hover [text-shadow: 1px_1px_0_rgb(0,0,0)] whitespace-normal px-4"
           >
-            <span className="transition-colors duration-300 group-hover:text-[#00ff00]">
-              {description}
-            </span>
+            {description}
           </motion.p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

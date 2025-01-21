@@ -144,22 +144,13 @@ export default function Products() {
   })
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
-    // Handle hash change for smooth scrolling
-    if (window.location.hash === '#products') {
-      const productsSection = document.getElementById('products')
-      if (productsSection) {
-        const navbarHeight = 80 // Approximate navbar height
-        const offset = productsSection.offsetTop - navbarHeight
-        setTimeout(() => {
-          window.scrollTo({
-            top: offset,
-            behavior: 'smooth'
-          })
-        }, 100)
-      }
-    }
+    setWindowWidth(window.innerWidth)
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   const nextSlide = () => {
@@ -190,62 +181,119 @@ export default function Products() {
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex gap-8"
-              animate={{ 
-                x: `-${currentIndex * 33.333}%`
-              }}
-              transition={{ 
-                duration: 0.5,
-                ease: "easeInOut"
-              }}
+          {/* Desktop View */}
+          <div className="hidden sm:block">
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex gap-8"
+                animate={{ 
+                  x: `-${currentIndex * 33.333}%`
+                }}
+                transition={{ 
+                  duration: 0.5,
+                  ease: "easeInOut"
+                }}
+              >
+                {products.map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    className="w-full min-w-[calc(33.333%-1.333rem)]"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <ProductCard product={product} index={index} />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-[#0aef0b] p-4 rounded-2xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#09d60a] transition-all duration-300 transform hover:-translate-x-3 group"
+              disabled={currentIndex === 0}
             >
-              {products.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  className="w-full min-w-[calc(33.333%-1.333rem)]"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <ProductCard product={product} index={index} />
-                </motion.div>
+              <ChevronLeftIcon className="w-6 h-6 text-white" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-[#0aef0b] p-4 rounded-2xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#09d60a] transition-all duration-300 transform hover:translate-x-3 group"
+              disabled={currentIndex === products.length - 3}
+            >
+              <ChevronRightIcon className="w-6 h-6 text-white" />
+            </button>
+
+            <div className="flex justify-center mt-12 space-x-4">
+              {Array.from({ length: products.length - 2 }).map((_, i) => (
+                <button
+                  key={i}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 transform hover:scale-110 ${
+                    i === currentIndex 
+                      ? 'bg-[#0aef0b]' 
+                      : 'bg-gray-400 hover:bg-[#0aef0b]'
+                  }`}
+                  onClick={() => setCurrentIndex(i)}
+                />
               ))}
-            </motion.div>
+            </div>
           </div>
 
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-[#0aef0b] p-4 rounded-2xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#09d60a] transition-all duration-300 transform hover:-translate-x-3 group"
-            disabled={currentIndex === 0}
-          >
-            <ChevronLeftIcon className="w-6 h-6 text-white" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-[#0aef0b] p-4 rounded-2xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#09d60a] transition-all duration-300 transform hover:translate-x-3 group"
-            disabled={currentIndex === products.length - 3}
-          >
-            <ChevronRightIcon className="w-6 h-6 text-white" />
-          </button>
+          {/* Mobile View */}
+          <div className="block sm:hidden">
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex"
+                animate={{ 
+                  x: `-${currentIndex * 100}%`
+                }}
+                transition={{ 
+                  duration: 0.5,
+                  ease: "easeInOut"
+                }}
+                drag="x"
+                dragConstraints={{ left: -(products.length - 1) * (windowWidth || 0), right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = offset.x + velocity.x * 50;
+                  if (swipe < -100 && currentIndex < products.length - 1) {
+                    setCurrentIndex(currentIndex + 1);
+                  } else if (swipe > 100 && currentIndex > 0) {
+                    setCurrentIndex(currentIndex - 1);
+                  }
+                }}
+              >
+                {products.map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    className="w-full min-w-full px-4"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <ProductCard product={product} index={index} />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
 
-          <div className="flex justify-center mt-12 space-x-4">
-            {Array.from({ length: products.length - 2 }).map((_, i) => (
-              <button
-                key={i}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                  i === currentIndex 
-                    ? 'bg-[#0aef0b]' 
-                    : 'bg-gray-400 hover:bg-[#0aef0b]'
-                }`}
-                onClick={() => setCurrentIndex(i)}
-              />
-            ))}
+            {/* Mobile Navigation Dots */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {products.map((_, i) => (
+                <button
+                  key={i}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    i === currentIndex 
+                      ? 'bg-[#0aef0b] scale-125' 
+                      : 'bg-gray-300'
+                  }`}
+                  onClick={() => setCurrentIndex(i)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
