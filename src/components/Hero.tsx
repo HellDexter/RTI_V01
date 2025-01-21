@@ -67,7 +67,7 @@ export default function Hero() {
   return (
     <section 
       className="relative w-full" 
-      style={{ height: 'min(90vh, calc(100vw / 2.2))' }}
+      style={{ height: 'min(100vh, 100vw)' }}
     >
       {heroSections.map((section, index) => (
         <motion.div
@@ -81,7 +81,7 @@ export default function Hero() {
             src={section.image}
             alt={section.title}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority={index === 0}
             quality={100}
           />

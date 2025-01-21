@@ -37,12 +37,12 @@ const ProductHero = ({ title, description, imagePath }: ProductHeroProps) => {
   };
 
   return (
-    <section className="relative w-full" style={{ height: 'min(70vh, calc(100vw / 2.2))' }}>
+    <section className="relative w-full" style={{ height: 'min(100vh, 100vw)' }}>
       <Image
         src={imagePath}
         alt={title}
         fill
-        className="object-cover"
+        className="object-cover object-center"
         priority
         quality={100}
       />
