@@ -6,9 +6,9 @@ import ProductHero from '@/components/ProductHero';
 import ImageModal from '@/components/ImageModal';
 
 const technologies = [
-  { name: 'MIG/MAG' },
-  { name: 'TIG' },
-  { name: 'LASER' }
+  { name: 'MIG/MAG', sectionId: 'migmag-specs' },
+  { name: 'TIG', sectionId: 'tig-specs' },
+  { name: 'LASER', sectionId: 'laser-specs' }
 ];
 
 const migmagSpecs = [
@@ -62,7 +62,12 @@ export default function RoboticWelding() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 80; // Přibližná výška navigačního baru
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -94,56 +99,17 @@ export default function RoboticWelding() {
               <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {technologies.map((tech) => (
-                  <div key={tech.name} className="text-center p-8 rounded-xl border-2 border-[#0aef0b] group hover:bg-[#0aef0b]/5 transition-all duration-300">
+                  <motion.div
+                    key={tech.name}
+                    className="text-center p-8 rounded-xl border-2 border-[#0aef0b] group hover:bg-[#0aef0b]/5 transition-all duration-300 cursor-pointer"
+                    onClick={() => scrollToSection(tech.sectionId)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     <h3 className="text-2xl font-bold">{tech.name}</h3>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </motion.div>
-
-            {/* Popis technologií */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-24 space-y-8"
-            >
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="p-8 rounded-2xl bg-gradient-to-r from-[#0aef0b]/5 to-transparent border-l-4 border-[#0aef0b] hover:from-[#0aef0b]/10 transition-all duration-300"
-              >
-                <p className="text-xl text-gray-800 leading-relaxed m-0">
-                  Všechny metody svařování máme vylepšené vlastním vývojem, upraveným softwarem, nebo i svařovacími zdroji.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="p-8 rounded-2xl bg-gradient-to-l from-[#0aef0b]/5 to-transparent border-r-4 border-[#0aef0b] hover:from-[#0aef0b]/10 transition-all duration-300"
-              >
-                <p className="text-xl text-gray-800 leading-relaxed m-0">
-                  U laseru máme vyvinutou speciální laserovou odlehčenou hlavici. Díky tomu jsou naše pracoviště schopná opakovaně dodávat perfektní svařence, které projdou i nejnáročnějšími zkouškami kvality.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="p-8 rounded-2xl bg-gradient-to-r from-[#0aef0b]/5 to-transparent border-l-4 border-[#0aef0b] hover:from-[#0aef0b]/10 transition-all duration-300"
-              >
-                <p className="text-xl text-gray-800 leading-relaxed m-0">
-                  Mechanická konstrukce pracoviště typu E s pojízdným robotem na dráze a parametricky řízenými polohovadly umožňuje vyrábět i ty nejnáročnější složité sestavy. Pro běžnější aplikace se hodí pracoviště typu H a pro jednodušší přesné opakování je vhodné pracoviště typu T. Do robotických pracovišť umíme integrovat i kombinovanou variantu svařovaní/čistící laser.
-                </p>
-              </motion.div>
             </motion.div>
 
             {/* Technické parametry */}
@@ -158,7 +124,7 @@ export default function RoboticWelding() {
               <div className="w-24 h-1 bg-[#0aef0b] mx-auto mb-12"></div>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* MIG/MAG */}
-                <div className="rounded-xl border-2 border-[#0aef0b] p-8">
+                <div id="migmag-specs" className="rounded-xl border-2 border-[#0aef0b] p-8">
                   <h3 className="text-2xl font-bold mb-6 text-center">MIG/MAG</h3>
                   <div className="space-y-4">
                     {migmagSpecs.map((spec) => (
@@ -171,7 +137,7 @@ export default function RoboticWelding() {
                 </div>
 
                 {/* TIG */}
-                <div className="rounded-xl border-2 border-[#0aef0b] p-8">
+                <div id="tig-specs" className="rounded-xl border-2 border-[#0aef0b] p-8">
                   <h3 className="text-2xl font-bold mb-6 text-center">TIG</h3>
                   <div className="space-y-4">
                     {tigSpecs.map((spec) => (
@@ -184,7 +150,7 @@ export default function RoboticWelding() {
                 </div>
 
                 {/* LASER */}
-                <div className="rounded-xl border-2 border-[#0aef0b] p-8">
+                <div id="laser-specs" className="rounded-xl border-2 border-[#0aef0b] p-8">
                   <h3 className="text-2xl font-bold mb-6 text-center">LASER</h3>
                   <div className="space-y-4">
                     {laserSpecs.map((spec) => (
